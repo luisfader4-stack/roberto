@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Michelangelo Buonarroti | Esercizi di italiano livello A2</title>
+  <!-- Font e stili eleganti ma leggibili -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fef7e8;
+      font-family: 'Inter', sans-serif;
+      color: #2c2418;
+      line-height: 1.45;
+      padding: 2rem 1.5rem;
+    }
+
+    /* Sfondo con texture delicata */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" opacity="0.05"><path fill="none" stroke="%239b6a3c" stroke-width="1" d="M70 40 L130 40 M100 20 L100 80 M40 100 L160 100 M20 70 L80 70 M120 130 L180 130 M50 160 L110 160 M150 50 L150 110 M30 150 L90 150 M170 80 L170 140"/><circle cx="100" cy="100" r="12" stroke="%239b6a3c" fill="none"/></svg>');
+      background-repeat: repeat;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Header artistico */
+    .hero {
+      text-align: center;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid #e2cba8;
+      padding-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.3rem;
+      font-weight: 700;
+      color: #7b4a2c;
+      letter-spacing: -0.3px;
+    }
+
+    .hero h1 i {
+      color: #c68642;
+      font-size: 2.8rem;
+      margin-right: 12px;
+    }
+
+    .hero .sub {
+      font-size: 1.1rem;
+      color: #8b694a;
+      background: #fff3e2;
+      display: inline-block;
+      padding: 0.4rem 1.5rem;
+      border-radius: 60px;
+      margin-top: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* TESTO INTRODUTTIVO - livello A2, chiaro e accogliente */
+    .testo-intro {
+      background: #ffffffdd;
+      background: linear-gradient(135deg, #fffef7, #fffaf0);
+      border-radius: 32px;
+      padding: 1.8rem 2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 12px 24px -12px rgba(0,0,0,0.12);
+      border: 1px solid #f0e2ce;
+    }
+
+    .testo-intro h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: #7b4a2c;
+      border-left: 5px solid #c79a6e;
+      padding-left: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .testo-intro h3 {
+      font-size: 1.25rem;
+      color: #9b6a3c;
+      margin: 1.2rem 0 0.5rem 0;
+      font-weight: 600;
+    }
+
+    .testo-intro p {
+      margin-bottom: 0.9rem;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .testo-intro .curiosita {
+      background: #f7efdf;
+      padding: 0.8rem 1.2rem;
+      border-radius: 24px;
+      margin: 1rem 0;
+      font-style: normal;
+      border-left: 3px solid #c79a6e;
+    }
+
+    .riepilogo {
+      background: #e8dccc;
+      border-radius: 28px;
+      padding: 1rem 1.5rem;
+      margin-top: 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    .riepilogo table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.5rem;
+    }
+
+    .riepilogo th, .riepilogo td {
+      text-align: left;
+      padding: 6px 8px;
+      border-bottom: 1px dashed #c6a468;
+    }
+
+    .riepilogo th {
+      font-weight: 600;
+      color: #5a3a20;
+    }
+
+    /* Griglia esercizi */
+    .grid-exercises {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      background: #fffef9;
+      border-radius: 2rem;
+      box-shadow: 0 18px 30px -10px rgba(0,0,0,0.15);
+      transition: transform 0.2s, box-shadow 0.2s;
+      overflow: hidden;
+      border: 1px solid #eedbba;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 24px 36px -12px rgba(0,0,0,0.2);
+    }
+
+    .card-header {
+      background: #2c2418;
+      color: #fbefdb;
+      padding: 0.9rem 1.5rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .card-header i {
+      font-size: 1.5rem;
+      color: #e2bc7c;
+    }
+
+    .card-body {
+      padding: 1.5rem 1.5rem 1.8rem;
+    }
+
+    .question-text {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+      background: #fef5e9;
+      padding: 0.6rem 1rem;
+      border-radius: 20px;
+      color: #3f2c1a;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #fcf7ef;
+      padding: 8px 14px;
+      border-radius: 60px;
+      border: 1px solid #e9dac4;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+
+    .option:hover {
+      background: #f5e9d8;
+      border-color: #c9a86c;
+    }
+
+    input[type="radio"], input[type="checkbox"] {
+      accent-color: #9b6a3c;
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    .vof-buttons {
+      display: flex;
+      gap: 18px;
+      margin: 12px 0 20px;
+    }
+
+    .btn-vf {
+      background: #f2e6d6;
+      border: 1px solid #d6bd91;
+      padding: 8px 24px;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+    }
+
+    .btn-vf.selected {
+      background: #c79a6e;
+      color: white;
+      border-color: #8b5a2b;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .feedback {
+      margin-top: 15px;
+      padding: 10px 14px;
+      border-radius: 28px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      background: #f2e9dd;
+      border-left: 4px solid;
+    }
+
+    .feedback.correct {
+      background: #e2f3e3;
+      border-left-color: #2c7840;
+      color: #1e562f;
+    }
+
+    .feedback.wrong {
+      background: #ffeae5;
+      border-left-color: #bc4e2c;
+      color: #8b3c1f;
+    }
+
+    button.submit-btn {
+      background: #9b6a3c;
+      border: none;
+      color: white;
+      padding: 10px 24px;
+      font-weight: 600;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      margin-top: 6px;
+      cursor: pointer;
+      transition: 0.2s;
+      font-family: 'Inter', sans-serif;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    button.submit-btn:hover {
+      background: #7c4f2a;
+      transform: scale(0.97);
+    }
+
+    .reset-all {
+      text-align: center;
+      margin: 2rem auto 1rem;
+    }
+
+    .reset-btn {
+      background: #dfcca8;
+      color: #2c2418;
+      border: none;
+      padding: 10px 32px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .reset-btn:hover {
+      background: #c6a468;
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2.5rem;
+      font-size: 0.8rem;
+      color: #8e775a;
+      border-top: 1px solid #e2cfaa;
+      padding-top: 1.5rem;
+    }
+
+    @media (max-width: 700px) {
+      body { padding: 1rem; }
+      .hero h1 { font-size: 2.2rem; }
+      .testo-intro { padding: 1.2rem; }
+      .riepilogo table { font-size: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="hero">
+    <h1><i class="fas fa-palette"></i> Michelangelo Buonarroti</h1>
+    <div class="sub"><i class="fas fa-graduation-cap"></i> Livello A2 · Impara l'italiano con l'arte</div>
+  </div>
+
+  <!-- TESTO INTRODUTTIVO LIVELLO A2 (collegato agli esercizi) -->
+  <div class="testo-intro">
+    <h2><i class="fas fa-feather-alt"></i> Michelangelo Buonarroti – Un grande artista italiano</h2>
+    
+    <p><strong>Michelangelo</strong> nasce nel <strong>1475</strong> in un piccolo paese che si chiama <strong>Caprese</strong>, in Toscana. Poco dopo la sua famiglia si trasferisce a <strong>Firenze</strong>. Firenze è una città molto importante per l'arte.</p>
+    
+    <h3>🎨 Le sue opere più famose</h3>
+    <p>Michelangelo è uno scultore, un pittore e un architetto. Fa molte opere importanti.</p>
+    <ul style="margin-left: 1.5rem; margin-bottom: 0.8rem;">
+      <li><strong>Il David</strong>: una statua di un uomo forte e coraggioso.</li>
+      <li><strong>La Pietà</strong>: una statua dove Maria tiene Gesù morto tra le braccia.</li>
+      <li><strong>Il Mosè</strong>: una statua per la tomba di un papa.</li>
+    </ul>
+    <div class="curiosita">
+      <i class="fas fa-lightbulb" style="margin-right: 10px; color:#c68642;"></i> 
+      <strong>Attenzione!</strong> C'è un'opera che <strong>non</strong> è di Michelangelo: <strong>Il Perseo</strong>. Quest'opera è di un altro artista, Benvenuto Cellini.
+    </div>
+    
+    <h3>🏛️ La Cappella Sistina</h3>
+    <p>Tra il 1508 e il 1512, Michelangelo dipinge la <strong>volta della Cappella Sistina</strong> in Vaticano. Lavora per <strong>quattro anni</strong>. Dipinge tante storie della Bibbia, come la Creazione di Adamo. È un lavoro molto difficile e faticoso.</p>
+    
+    <h3>✍️ Una curiosità interessante</h3>
+    <p>Michelangelo firma una sola opera: <strong>la Pietà</strong>. Perché? Una volta sente delle persone che dicono: “Questa statua l'ha fatta un altro artista”. Allora Michelangelo scrive il suo nome sulla statua: <em>“MICHAELANGELUS BONAROTUS FLORENTINUS FACIEBAT”</em> (Michelangelo Buonarroti fiorentino fece).</p>
+    
+    <h3>📐 Michelangelo non è solo scultore e pittore</h3>
+    <p>Molte persone pensano che Michelangelo fa solo sculture e dipinti. Ma <strong>non è vero!</strong> Lui lavora anche come <strong>architetto</strong>. Progetta la cupola di San Pietro a Roma e il Campidoglio, una piazza famosa. Inoltre scrive <strong>poesie</strong>. È un artista completo, un genio.</p>
+    
+    <div class="riepilogo">
+      <i class="fas fa-table-list"></i> <strong>📌 Riepilogo per gli esercizi</strong>
+      <table>
+        <tr><th>Domanda</th><th>Risposta corretta</th></tr>
+        <tr><td>Dove nasce Michelangelo?</td><td>Caprese (Arezzo)</td></tr>
+        <tr><td>Quale opera non è di Michelangelo?</td><td>Il Perseo</td></tr>
+        <tr><td>Quanti anni per la Cappella Sistina?</td><td>4 anni</td></tr>
+        <tr><td>Michelangelo firma la Pietà?</td><td>Vero</td></tr>
+        <tr><td>Fa solo scultura e pittura?</td><td>Falso (architettura e poesia)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ESERCIZI - 5 esercizi interattivi -->
+  <div class="grid-exercises" id="exercisesGrid"></div>
+
+  <div class="reset-all">
+    <button class="reset-btn" id="globalResetBtn"><i class="fas fa-undo-alt"></i> Ricomincia tutti gli esercizi</button>
+  </div>
+  <footer>
+    <i class="fas fa-italy"></i> Impara l'italiano con l'arte · Michelangelo · Livello A2
+  </footer>
+</div>
+
+<script>
+  // DATI DEGLI ESERCIZI - corrispondono al testo A2
+  const exercisesData = [
+    { // ES 1 - multipla: nascita
+      id: 0,
+      type: "multiple",
+      title: "📅 Dove nasce Michelangelo?",
+      question: "Michelangelo nasce nel 1475. In quale città / paese?",
+      options: ["Firenze", "Caprese (Arezzo)", "Roma", "Venezia"],
+      correct: "Caprese (Arezzo)",
+      explanation: "Sì! Michelangelo nasce a Caprese, un piccolo paese in Toscana vicino ad Arezzo. Poi vive a Firenze."
+    },
+    { // ES 2 - multipla: opera non sua
+      id: 1,
+      type: "multiple",
+      title: "🗿 Quale opera NON è di Michelangelo?",
+      question: "Tra queste opere, una non è stata fatta da Michelangelo. Quale?",
+      options: ["David", "Pietà Vaticana", "Mosè", "Il Perseo"],
+      correct: "Il Perseo",
+      explanation: "Corretto! 'Il Perseo' è di Benvenuto Cellini. Michelangelo ha scolpito David, Pietà e Mosè."
+    },
+    { // ES 3 - multipla: anni Cappella Sistina
+      id: 2,
+      type: "multiple",
+      title: "⏳ La Cappella Sistina",
+      question: "Quanti anni impiega Michelangelo per dipingere la volta della Cappella Sistina?",
+      options: ["2 anni", "4 anni", "6 anni", "8 anni"],
+      correct: "4 anni",
+      explanation: "Esatto! Lavora dal 1508 al 1512, cioè 4 anni. Un lavoro lungo e difficile!"
+    },
+    { // ES 4 - Vero/Falso: firma Pietà
+      id: 3,
+      type: "truefalse",
+      title: "✍️ Vero o Falso? La firma",
+      question: "Michelangelo firma la statua della Pietà perché sente persone che danno il merito ad altri artisti.",
+      correctAnswer: true,
+      explanation: "Vero! Lui scrive il suo nome sulla fascia di Maria. È l'unica opera che firma."
+    },
+    { // ES 5 - Vero/Falso: solo scultore e pittore?
+      id: 4,
+      type: "truefalse",
+      title: "🏛️ Vero o Falso? Artista completo",
+      question: "Michelangelo fa solo sculture e dipinti. Non fa architettura né poesia.",
+      correctAnswer: false,
+      explanation: "Falso! Michelangelo è anche architetto (cupola di San Pietro, Campidoglio) e scrive poesie. È un genio completo."
+    }
+  ];
+
+  // Stato degli esercizi
+  let exerciseState = {
+    0: { selected: null, feedbackMsg: null, isCorrect: null },
+    1: { selected: null, feedbackMsg: null, isCorrect: null },
+    2: { selected: null, feedbackMsg: null, isCorrect: null },
+    3: { selected: null, feedbackMsg: null, isCorrect: null },
+    4: { selected: null, feedbackMsg: null, isCorrect: null }
+  };
+
+  // Funzione per aggiornare UI feedback
+  function updateFeedbackUI(exId) {
+    const feedbackDiv = document.getElementById(`fb-${exId}`);
+    if (!feedbackDiv) return;
+    const state = exerciseState[exId];
+    if (state.feedbackMsg) {
+      feedbackDiv.innerText = state.feedbackMsg;
+      feedbackDiv.classList.remove('correct', 'wrong');
+      if (state.isCorrect === true) feedbackDiv.classList.add('correct');
+      else if (state.isCorrect === false) feedbackDiv.classList.add('wrong');
+      else feedbackDiv.style.background = "#f2e9dd";
+    } else {
+      feedbackDiv.innerText = "💡 Scegli una risposta e premi 'Controlla'.";
+      feedbackDiv.classList.remove('correct', 'wrong');
+      feedbackDiv.style.background = "#f2e9dd";
+      feedbackDiv.style.borderLeftColor = "#c6a15b";
+    }
+  }
+
+  // Feedback temporaneo per avvisi
+  function showTemporaryFeedback(exId, message, type) {
+    const fbDiv = document.getElementById(`fb-${exId}`);
+    if (!fbDiv) return;
+    const originalMsg = exerciseState[exId].feedbackMsg;
+    const originalClass = fbDiv.className;
+    fbDiv.innerText = message;
+    fbDiv.classList.remove('correct', 'wrong');
+    if (type === 'correct') fbDiv.classList.add('correct');
+    else fbDiv.classList.add('wrong');
+    setTimeout(() => {
+      if (originalMsg) {
+        fbDiv.innerText = originalMsg;
+        fbDiv.className = originalClass;
+      } else {
+        fbDiv.innerText = "💡 Scegli una risposta e premi 'Controlla'.";
+        fbDiv.classList.remove('correct', 'wrong');
+        fbDiv.style.background = "#f2e9dd";
+        fbDiv.style.borderLeftColor = "#c6a15b";
+      }
+    }, 1800);
+  }
+
+  // Render completo
+  function renderExercises() {
+    const grid = document.getElementById('exercisesGrid');
+    grid.innerHTML = '';
+    exercisesData.forEach(ex => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.id = `card-${ex.id}`;
+
+      const header = document.createElement('div');
+      header.className = 'card-header';
+      header.innerHTML = `<i class="fas fa-${ex.type === 'multiple' ? 'question-circle' : 'check-double'}"></i> ${ex.title}`;
+      
+      const body = document.createElement('div');
+      body.className = 'card-body';
+      
+      const questionDiv = document.createElement('div');
+      questionDiv.className = 'question-text';
+      questionDiv.innerText = ex.question;
+      body.appendChild(questionDiv);
+      
+      if (ex.type === 'multiple') {
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+        ex.options.forEach(opt => {
+          const optLabel = document.createElement('label');
+          optLabel.className = 'option';
+          const radio = document.createElement('input');
+          radio.type = 'radio';
+          radio.name = `q_${ex.id}`;
+          radio.value = opt;
+          radio.addEventListener('change', () => {
+            exerciseState[ex.id].selected = opt;
+            exerciseState[ex.id].feedbackMsg = null;
+            exerciseState[ex.id].isCorrect = null;
+            updateFeedbackUI(ex.id);
+          });
+          if (exerciseState[ex.id].selected === opt) radio.checked = true;
+          optLabel.appendChild(radio);
+          optLabel.appendChild(document.createTextNode(` ${opt}`));
+          optionsDiv.appendChild(optLabel);
+        });
+        body.appendChild(optionsDiv);
+        
+        const submitBtn = document.createElement('button');
+        submitBtn.className = 'submit-btn';
+        submitBtn.innerHTML = '<i class="fas fa-check-circle"></i> Controlla risposta';
+        submitBtn.addEventListener('click', () => {
+          const selectedVal = exerciseState[ex.id].selected;
+          if (!selectedVal) {
+            showTemporaryFeedback(ex.id, "⚠️ Scegli un'opzione prima di controllare!", "wrong");
+            return;
+          }
+          const isAnsCorrect = (selectedVal === ex.correct);
+          const feedbackMsg = isAnsCorrect ? `✅ Corretto! ${ex.explanation}` : `❌ Non corretto. La risposta giusta è: "${ex.correct}". ${ex.explanation}`;
+          exerciseState[ex.id].feedbackMsg = feedbackMsg;
+          exerciseState[ex.id].isCorrect = isAnsCorrect;
+          updateFeedbackUI(ex.id);
+        });
+        body.appendChild(submitBtn);
+      } 
+      else { // true/false
+        const btnContainer = document.createElement('div');
+        btnContainer.className = 'vof-buttons';
+        const veroBtn = document.createElement('button');
+        veroBtn.innerText = '✔️ VERO';
+        veroBtn.className = 'btn-vf';
+        const falsoBtn = document.createElement('button');
+        falsoBtn.innerText = '❌ FALSO';
+        falsoBtn.className = 'btn-vf';
+        
+        const updateTFSelection = (valueBool) => {
+          exerciseState[ex.id].selected = valueBool;
+          exerciseState[ex.id].feedbackMsg = null;
+          exerciseState[ex.id].isCorrect = null;
+          if (valueBool === true) {
+            veroBtn.classList.add('selected');
+            falsoBtn.classList.remove('selected');
+          } else {
+            falsoBtn.classList.add('selected');
+            veroBtn.classList.remove('selected');
+          }
+          updateFeedbackUI(ex.id);
+        };
+        
+        veroBtn.addEventListener('click', () => updateTFSelection(true));
+        falsoBtn.addEventListener('click', () => updateTFSelection(false));
+        
+        if (exerciseState[ex.id].selected === true) veroBtn.classList.add('selected');
+        if (exerciseState[ex.id].selected === false) falsoBtn.classList.add('selected');
+        
+        btnContainer.appendChild(veroBtn);
+        btnContainer.appendChild(falsoBtn);
+        body.appendChild(btnContainer);
+        
+        const submitTF = document.createElement('button');
+        submitTF.className = 'submit-btn';
+        submitTF.innerHTML = '<i class="fas fa-check-circle"></i> Verifica risposta';
+        submitTF.addEventListener('click', () => {
+          const selectedBool = exerciseState[ex.id].selected;
+          if (selectedBool === null || selectedBool === undefined) {
+            showTemporaryFeedback(ex.id, "📌 Scegli VERO o FALSO prima di verificare.", "wrong");
+            return;
+          }
+          const isCorrectAns = (selectedBool === ex.correctAnswer);
+          let feedbackMsg = "";
+          if (isCorrectAns) {
+            feedbackMsg = `✅ Esatto! ${ex.explanation}`;
+          } else {
+            const correctText = ex.correctAnswer ? "VERO" : "FALSO";
+            feedbackMsg = `❌ Sbagliato. La risposta corretta è ${correctText}. ${ex.explanation}`;
+          }
+          exerciseState[ex.id].feedbackMsg = feedbackMsg;
+          exerciseState[ex.id].isCorrect = isCorrectAns;
+          updateFeedbackUI(ex.id);
+        });
+        body.appendChild(submitTF);
+      }
+      
+      const feedbackDiv = document.createElement('div');
+      feedbackDiv.className = 'feedback';
+      feedbackDiv.id = `fb-${ex.id}`;
+      if (exerciseState[ex.id].feedbackMsg) {
+        feedbackDiv.innerText = exerciseState[ex.id].feedbackMsg;
+        feedbackDiv.classList.add(exerciseState[ex.id].isCorrect ? 'correct' : 'wrong');
+      } else {
+        feedbackDiv.innerText = '💡 Scegli una risposta e premi "Controlla".';
+        feedbackDiv.style.background = "#f2e9dd";
+        feedbackDiv.style.borderLeftColor = "#c6a15b";
+      }
+      body.appendChild(feedbackDiv);
+      
+      card.appendChild(header);
+      card.appendChild(body);
+      grid.appendChild(card);
+    });
+  }
+
+  // Reset globale
+  function resetAllExercises() {
+    for (let i = 0; i < exercisesData.length; i++) {
+      exerciseState[i] = { selected: null, feedbackMsg: null, isCorrect: null };
+    }
+    renderExercises();
+  }
+
+  // Avvio
+  document.addEventListener('DOMContentLoaded', () => {
+    renderExercises();
+    const resetBtn = document.getElementById('globalResetBtn');
+    if (resetBtn) resetBtn.addEventListener('click', resetAllExercises);
+  });
+</script>
+</body>
+</html>
